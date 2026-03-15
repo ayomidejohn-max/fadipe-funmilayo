@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+sitemap: https://https://ayomidejohn-max.github.io/fadipe-funmilayo/sitemap.xml
 Sitemap: https://fadipe-funmilayo.netlify.app/sitemap.xml
