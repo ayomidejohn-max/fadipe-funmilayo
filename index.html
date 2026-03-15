@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Fadipe Funmilayo Adewale - Economics and Development Studies student at Federal University of Oye-Ekiti (FUOYE). Passionate about economic development, governance, leadership, and technology-driven solutions for Africa.">
+    <meta name="keywords" content="Economics, Development Studies, FUOYE, Leadership, Governance, Economic Development, Africa, Nigeria">
+    <meta name="author" content="Fadipe Funmilayo Adewale">
+    <meta name="theme-color" content="#f5c842">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fadipe Funmilayo Adewale - Economics Student & Development Enthusiast">
+    <meta property="og:description" content="Economics and Development Studies student at FUOYE exploring economic development, governance, and innovation in Africa.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Fadipe+Funmilayo">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>Fadipe Funmilayo Adewale | Economics Student & Development Enthusiast | FUOYE</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fadipe Funmilayo Adewale",
+        "url": "https://fadipe-funmilayo.netlify.app",
+        "description": "Economics and Development Studies student at Federal University of Oye-Ekiti",
+        "affiliation": {
+            "@type": "EducationalOrganization",
+            "name": "Federal University of Oye-Ekiti (FUOYE)"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/fadipe-funmilayo",
+            "https://www.facebook.com/profile.php?id=61580861773297",
+
+            "https://www.instagram.com/fadipefunmilayoadewale?igsh=M3FpZzZvYWI1YXVq",
+            "https://x.com/Fadfun000"
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --card: #1a1a26;
+            --accent: #f5c842;
+            --accent2: #e8734a;
+            --text: #f0ece4;
+            --muted: #8a8699;
+            --border: rgba(245,200,66,0.15);
+        }
+
+        /* Light Mode */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f8f7f4;
+                --surface: #ede8e0;
+                --card: #e8ddd5;
+                --accent: #d4af37;
+                --accent2: #c75b39;
+                --text: #2a2a2a;
+                --muted: #666666;
+                --border: rgba(212,175,55,0.2);
+            }
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed; top:0; left:0; right:0; z-index:100;
+            display:flex; align-items:center; justify-content:space-between;
+            padding: 1.2rem 5vw;
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        @media (prefers-color-scheme: light) {
+            nav {
+                background: rgba(248,247,244,0.85);
+            }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; font-weight:700;
+            color: var(--accent);
+            letter-spacing:0.5px;
+        }
+
+        .nav-links { display:flex; gap:2rem; list-style:none; }
+        .nav-links a {
+            text-decoration:none; color: var(--muted);
+            font-size:0.9rem; font-weight:500; letter-spacing:0.5px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        .nav-cta {
+            background: var(--accent); color: #0a0a0f;
+            padding: 0.55rem 1.4rem; border-radius:4px;
+            font-weight:600; font-size:0.85rem; text-decoration:none;
+            transition: all 0.3s;
+            border: none; cursor: pointer;
+        }
+        .nav-cta:hover { background:#ffd85a; transform:translateY(-1px); }
+
+        .theme-toggle {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover { border-color: var(--accent); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            width: 30px;
+        }
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+        /* ─── HERO ─── */
+        #home {
+            min-height:100vh;
+            display:flex; align-items:center;
+            padding: 8rem 5vw 4rem;
+            position:relative; overflow:hidden;
+        }
+
+        .hero-bg {
+            position:absolute; inset:0; z-index:0;
+            background:
+                radial-gradient(ellipse 60% 50% at 70% 50%, rgba(245,200,66,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(232,115,74,0.06) 0%, transparent 60%);
+        }
+
+        .hero-grid {
+            position:absolute; inset:0; z-index:0; opacity:0.04;
+            background-image: linear-gradient(var(--accent) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content { position:relative; z-index:1; max-width:680px; }
+
+        .hero-tag {
+            display:inline-block;
+            border:1px solid var(--accent);
+            color:var(--accent); font-size:0.75rem;
+            letter-spacing:2px; text-transform:uppercase;
+            padding:0.35rem 1rem; border-radius:2px;
+            margin-bottom:1.5rem;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero-title {
+            font-family:'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight:900; line-height:1.05;
+            margin-bottom:1.2rem;
+            animation: fadeUp 0.7s 0.15s ease both;
+        }
+
+        .hero-title span { color:var(--accent); }
+
+        .hero-sub {
+            font-size:1.1rem; color:var(--muted); line-height:1.7;
+            max-width:520px; margin-bottom:2.5rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        .hero-btns { display:flex; gap:1rem; flex-wrap:wrap;
+            animation: fadeUp 0.7s 0.45s ease both; }
+
+        .btn-primary {
+            background:var(--accent); color:#0a0a0f;
+            padding:0.8rem 2rem; border-radius:4px;
+            font-weight:700; font-size:0.95rem; text-decoration:none;
+            transition:all 0.3s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background:#ffd85a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(245,200,66,0.25); }
+
+        .btn-outline {
+            border:1px solid var(--muted); color:var(--text);
+            padding:0.8rem 2rem; border-radius:4px;
+            font-weight:500; font-size:0.95rem; text-decoration:none;
+            transition:all 0.3s; background: transparent; cursor: pointer;
+        }
+        .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
+
+        .hero-photo {
+            position:absolute; right:5vw; top:50%; transform:translateY(-50%);
+            width: clamp(200px, 28vw, 420px);
+            aspect-ratio:1;
+            border-radius:50% 40% 60% 30% / 40% 60% 30% 50%;
+            overflow:hidden;
+            border:3px solid var(--accent);
+            box-shadow: 0 0 60px rgba(245,200,66,0.12);
+            z-index:1;
+            animation: fadeIn 1s 0.5s ease both;
+        }
+
+        .hero-photo img { width:100%; height:100%; object-fit:cover; }
+
+        .hero-photo-placeholder {
+            width:100%; height:100%;
+            background: linear-gradient(135deg, var(--card), var(--surface));
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            gap:0.5rem; color:var(--muted); font-size:0.85rem; text-align:center; padding:1rem;
+        }
+
+        .scroll-hint {
+            position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+            display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+            color:var(--muted); font-size:0.75rem; letter-spacing:1px; text-transform:uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-hint::after {
+            content:''; width:1px; height:40px; background:linear-gradient(var(--accent), transparent);
+        }
+
+        /* ─── SECTIONS ─── */
+        section { padding: 6rem 5vw; }
+
+        .section-label {
+            font-size:0.75rem; letter-spacing:3px; text-transform:uppercase;
+            color:var(--accent); margin-bottom:0.75rem;
+        }
+
+        .section-title {
+            font-family:'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight:800; margin-bottom:1rem;
+        }
+
+        .section-line {
+            width:50px; height:3px;
+            background:linear-gradient(90deg, var(--accent), var(--accent2));
+            margin-bottom:3rem; border-radius:2px;
+        }
+
+        /* ─── ABOUT ─── */
+        #about { background: var(--surface); }
+
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+
+        .about-text p { color:var(--muted); line-height:1.8; margin-bottom:1rem; }
+        .about-text p strong { color:var(--text); }
+
+        .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; }
+
+        .skill-item {
+            background:var(--card); border:1px solid var(--border);
+            padding:0.8rem 1rem; border-radius:6px;
+            display:flex; align-items:center; gap:0.75rem;
+            font-size:0.9rem; font-weight:500;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .skill-item:hover { border-color:var(--accent); transform:translateY(-2px); }
+
+        .skill-dot { width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+        .about-goals {
+            margin-top:2rem; padding:1.5rem;
+            background:var(--card); border-left:3px solid var(--accent);
+            border-radius:0 8px 8px 0;
+        }
+
+        .about-goals h4 { color:var(--accent); margin-bottom:0.5rem; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; }
+        .about-goals p { color:var(--muted); font-size:0.9rem; line-height:1.7; }
+
+        /* ─── EXPERTISE ─── */
+        #expertise { background: var(--bg); }
+
+        .expertise-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; }
+
+        .expertise-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:12px; padding:2rem;
+            transition:all 0.3s;
+        }
+
+        .expertise-card:hover {
+            transform:translateY(-6px);
+            border-color:var(--accent);
+            box-shadow:0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .expertise-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:1rem; color:var(--accent); }
+
+        .expertise-card ul { list-style:none; padding:0; }
+
+        .expertise-card li {
+            color:var(--muted); line-height:2; font-size:0.9rem;
+            padding-left:1.5rem;
+            position:relative;
+        }
+
+        .expertise-card li::before {
+            content:'→'; position:absolute; left:0; color:var(--accent);
+        }
+
+        /* ─── INTERESTS ─── */
+        #interests { background: var(--surface); }
+
+        .interests-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; }
+
+        .interest-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:12px; padding:1.5rem;
+            transition:all 0.3s;
+        }
+
+        .interest-card:hover {
+            transform:translateY(-4px);
+            border-color:var(--accent);
+        }
+
+        .interest-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+        .interest-card p { color:var(--muted); font-size:0.9rem; line-height:1.6; }
+
+        /* ─── CONTACT ─── */
+        #contact { background: var(--bg); }
+
+        .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; align-items:start; }
+
+        .contact-info { display:flex; flex-direction:column; gap:1.5rem; }
+
+        .contact-item {
+            display:flex; align-items:flex-start; gap:1rem;
+            padding:1.2rem; background:var(--card);
+            border:1px solid var(--border); border-radius:10px;
+            text-decoration:none; color:var(--text);
+            transition:all 0.3s;
+        }
+
+        .contact-item:hover { border-color:var(--accent); transform:translateX(4px); }
+
+        .contact-icon {
+            width:44px; height:44px; border-radius:8px;
+            background:rgba(245,200,66,0.1); color:var(--accent);
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.3rem; flex-shrink:0;
+        }
+
+        .contact-item-text h4 { font-size:0.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.2rem; }
+        .contact-item-text p { font-weight:500; }
+
+        .social-links {
+            display:flex; flex-wrap:wrap; gap:1rem;
+            margin-top:1rem;
+        }
+
+        .social-link {
+            width:44px; height:44px;
+            border-radius:8px;
+            background:var(--card); border:1px solid var(--border);
+            display:flex; align-items:center; justify-content:center;
+            text-decoration:none; color:var(--text);
+            transition:all 0.3s;
+            font-size:1.2rem;
+        }
+
+        .social-link:hover {
+            background:var(--accent);
+            color:#0a0a0f;
+            border-color:var(--accent);
+            transform:translateY(-2px);
+        }
+
+        /* form */
+        .contact-form { display:flex; flex-direction:column; gap:1rem; }
+        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+        .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+        .form-group label { font-size:0.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+        .form-group input, .form-group textarea {
+            background:var(--card); border:1px solid var(--border);
+            color:var(--text); padding:0.85rem 1rem; border-radius:8px;
+            font-family:'DM Sans', sans-serif; font-size:0.95rem;
+            transition:border-color 0.3s; outline:none; resize:vertical;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color:var(--accent); }
+        .form-group textarea { min-height:140px; }
+        .form-submit {
+            background:var(--accent); color:#0a0a0f;
+            border:none; padding:0.9rem 2rem; border-radius:8px;
+            font-family:'DM Sans', sans-serif; font-size:1rem;
+            font-weight:700; cursor:pointer; align-self:flex-start;
+            transition:all 0.3s;
+        }
+        .form-submit:hover { background:#ffd85a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(245,200,66,0.25); }
+
+        .whatsapp-cta {
+            display:flex; align-items:center; gap:0.75rem;
+            background:#25D366; color:#fff;
+            padding:1rem 1.5rem; border-radius:10px;
+            text-decoration:none; font-weight:600;
+            transition:all 0.3s; margin-top:0.5rem;
+            border:none; cursor:pointer;
+        }
+        .whatsapp-cta:hover { background:#1ebe5c; transform:translateY(-2px); }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align:center; padding:2rem 5vw;
+            border-top:1px solid var(--border);
+            color:var(--muted); font-size:0.85rem;
+        }
+        footer span { color:var(--accent); }
+        
+        .footer-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--accent);
+    color: #0a0a0f;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: none;
+}
+
+.footer-cta:hover {
+    background: #ffd85a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245,200,66,0.25);
+}
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(24px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity:0; }
+            to   { opacity:1; }
+        }
+
+        @keyframes bounce {
+            0%,100% { transform:translateX(-50%) translateY(0); }
+            50%      { transform:translateX(-50%) translateY(-8px); }
+        }
+
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity:1; transform:none; }
+
+        /* ─── MOBILE ─── */
+        @media(max-width:768px) {
+            nav { padding: 1rem 4vw; }
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+            .nav-links.active { display:flex; position:absolute; top:60px; left:0; right:0; flex-direction:column; background:var(--surface); padding:2rem; gap:1rem; }
+            .hero-photo { display:none; }
+            .about-grid, .contact-grid, .expertise-grid { grid-template-columns:1fr; gap:2rem; }
+            .form-row { grid-template-columns:1fr; }
+            #home { padding-top:7rem; }
+            .section-title { font-size:1.8rem; }
+        }
+
+        @media(max-width:480px) {
+            nav { padding: 0.8rem 3vw; }
+            .logo { font-size:1.1rem; }
+            .nav-cta { padding:0.4rem 1rem; font-size:0.75rem; }
+            .hero-title { font-size:2rem; }
+            .hero-sub { font-size:0.95rem; }
+            .btn-primary, .btn-outline { padding:0.7rem 1.5rem; font-size:0.85rem; }
+            section { padding:4rem 3vw; }
+            .section-title { font-size:1.4rem; }
+            .skills-grid, .expertise-grid { grid-template-columns:1fr; }
+            .form-row { grid-template-columns:1fr; }
+            .social-links { justify-content:flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">FFA</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex; gap:0.75rem; align-items:center;">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+        <div class="hero-tag">Economics & Development Studies | FUOYE</div>
+        <h1 class="hero-title">Hi, I'm <span>Fadipe<br>Funmilayo</span></h1>
+        <p class="hero-sub">Exploring economic development, governance, and innovation. Passionate about how leadership, economic systems, and technology drive sustainable growth in emerging economies.</p>
+        <div class="hero-btns">
+            <a href="#about" class="btn-primary">Learn More</a>
+            <a href="#contact" class="btn-outline">Get in Touch →</a>
+        </div>
+    </div>
+    <div class="hero-photo">
+    <img src="profile-photo.jpg" alt="Fadipe Funmilayo Adewale">
+</div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+        <div class="about-text reveal">
+            <p>I'm <strong>Fadipe Funmilayo Adewale</strong>, a student at the Federal University of Oye-Ekiti (FUOYE) studying Economics and Development Studies. I have a strong passion for understanding how <strong>leadership, economic systems, and innovation</strong> influence national growth and societal progress.</p>
+            
+            <p>I believe that <strong>sustainable national development</strong> requires sound economic policies, visionary leadership, and active intellectual engagement. This drives my interest in participating in academic discussions and debates exploring complex relationships between governance, economics, and development.</p>
+
+            <p>I recently participated in the debate <em>"Is Nigeria's Leadership Crisis a Bigger Threat to Development than Economic Challenges?"</em> organized by the Faculty of Social Science Students (FUSOSSA) and the Rotaract Club of FUOYE. This strengthened my ability to analyze national issues critically and engage in meaningful development discussions.</p>
+
+            <div class="about-goals">
+                <h4>My Vision</h4>
+                <p>To contribute to ideas, policies, and innovations that promote sustainable economic growth, strong institutions, and inclusive development, particularly in emerging economies and Africa.</p>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <p style="color:var(--muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:1.5rem;">Core Competencies</p>
+            <div class="skills-grid">
+                <div class="skill-item"><span class="skill-dot"></span>Economic Analysis</div>
+                <div class="skill-item"><span class="skill-dot"></span>Development Economics</div>
+                <div class="skill-item"><span class="skill-dot"></span>Public Policy</div>
+                <div class="skill-item"><span class="skill-dot"></span>Data Interpretation</div>
+                <div class="skill-item"><span class="skill-dot"></span>Research Writing</div>
+                <div class="skill-item"><span class="skill-dot"></span>Critical Thinking</div>
+                <div class="skill-item"><span class="skill-dot"></span>Public Speaking</div>
+                <div class="skill-item"><span class="skill-dot"></span>Strategic Planning</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+    <div class="section-label">Focus Areas</div>
+    <h2 class="section-title">Areas of Expertise</h2>
+    <div class="section-line"></div>
+    <div class="expertise-grid">
+        <div class="expertise-card reveal">
+            <h3>📊 Economic & Analytical Skills</h3>
+            <ul>
+                <li>Economic Analysis & Development Economics</li>
+                <li>Public Policy Evaluation</li>
+                <li>Data Interpretation & Statistical Thinking</li>
+                <li>Research & Analytical Writing</li>
+                <li>Problem Solving & Critical Analysis</li>
+            </ul>
+        </div>
+
+        <div class="expertise-card reveal">
+            <h3>🚀 Technology & Development</h3>
+            <ul>
+                <li>Digital Literacy & Awareness</li>
+                <li>Data Analysis Fundamentals</li>
+                <li>Technology for Economic Transformation</li>
+                <li>Research & Information Management</li>
+                <li>Innovation in Development Solutions</li>
+            </ul>
+        </div>
+
+        <div class="expertise-card reveal">
+            <h3>🎯 Leadership & Communication</h3>
+            <ul>
+                <li>Public Speaking & Debate</li>
+                <li>Communication & Presentation</li>
+                <li>Strategic Thinking</li>
+                <li>Team Collaboration</li>
+                <li>Leadership & Initiative</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+    <div class="section-label">Professional Interests</div>
+    <h2 class="section-title">What Drives Me</h2>
+    <div class="section-line"></div>
+    <div class="interests-grid">
+        <div class="interest-card reveal">
+            <h3>🌍 Economic Development & Policy</h3>
+            <p>Understanding how sound economic policies and institutional frameworks drive sustainable growth and poverty reduction in developing nations.</p>
+        </div>
+
+        <div class="interest-card reveal">
+            <h3>🏛️ Governance & Institutions</h3>
+            <p>Exploring the role of leadership, good governance, and strong institutions in shaping national development and combating corruption.</p>
+        </div>
+
+        <div class="interest-card reveal">
+            <h3>💻 Technology & Innovation</h3>
+            <p>Examining how digital innovation, data-driven decision-making, and technology solve real-world development challenges in Africa.</p>
+        </div>
+
+        <div class="interest-card reveal">
+            <h3>🌱 Sustainable Development</h3>
+            <p>Committed to exploring inclusive growth, environmental sustainability, and how development benefits all segments of society equitably.</p>
+        </div>
+
+        <div class="interest-card reveal">
+            <h3>📚 Research & Knowledge</h3>
+            <p>Continuously developing skills that combine economic thinking with analytical rigor to approach complex problems innovatively.</p>
+        </div>
+
+        <div class="interest-card reveal">
+            <h3>🤝 Academic Engagement</h3>
+            <p>Passionate about participating in intellectual discussions, debates, and collaborative research on national development and governance.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Connect With Me</h2>
+    <div class="section-line"></div>
+    <div class="contact-grid">
+        <div class="contact-info reveal">
+            <p style="color:var(--muted);line-height:1.8;margin-bottom:1rem;">Let's connect and discuss economics, development, governance, and innovation. I'm open to conversations, collaborations, and academic engagement.</p>
+            
+            <a href="mailto:fadipefunmilayo2006@gmail.com" class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-item-text">
+                    <h4>Email</h4>
+                    <p>fadipefunmilayo2006@gmail.com</p>
+                </div>
+            </a>
+
+            <a href="https://wa.me/234 911 277 0284" class="contact-item" target="_blank">
+                <div class="contact-icon">📱</div>
+                <div class="contact-item-text">
+                    <h4>WhatsApp</h4>
+                    <p>+234 911 277 0284</p>
+                </div>
+            </a>
+
+            <p style="color:var(--muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-top:2rem;margin-bottom:1rem;">Follow Me</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/fadipe-funmilayo" class="social-link" target="_blank" title="LinkedIn">in</a>
+                <a href="https://www.facebook.com/profile.php?id=61580861773297" class="social-link" target="_blank" title="Facebook">f</a>
+                <a href="https://www.instagram.com/fadipefunmilayoadewale?igsh=M3FpZzZvYWI1YXVq" class="social-link" target="_blank" title="Instagram">📷</a>
+                <a href="https://x.com/Fadfun000" class="social-link" target="_blank" title="Twitter">𝕏</a>
+                <a href="https://tiktok.com/@fadipefunmilayoadewale" class="social-link" target="_blank" title="TikTok">♪</a>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Discussion about Development..." required />
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Share your thoughts, ideas, or collaboration proposal..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message →</button>
+            </form>
+            <a href="https://wa.me/2349033212713" class="whatsapp-cta" target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 <span>Fadipe Funmilayo Adewale</span>. Economics Student | FUOYE. Built with passion and HTML5.</p>
+    <a href="https://fadipe-ayomide-j.netlify.app" target="_blank" class="footer-cta">👨‍💻 View Developer's Portfolio</a>
+</footer>
+
+<script>
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (!prefersDark) {
+        document.documentElement.style.colorScheme = 'light';
+        themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.style.colorScheme === 'dark';
+        document.documentElement.style.colorScheme = isDark ? 'light' : 'dark';
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add('visible'), i * 80);
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+
+    // Form submit
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Message Sent!';
+        btn.style.background = '#25D366';
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            e.target.reset();
+        }, 3000);
+    }
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        navItems.forEach(a => {
+            a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+        });
+    });
+</script>
+
+</body>
+</html>
