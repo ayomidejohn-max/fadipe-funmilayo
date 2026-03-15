@@ -819,5 +819,12 @@
     });
 </script>
 
+    <script>
+const url = encodeURIComponent(window.location.href);
+const key = "775e25ba2c094def9c3310759be21ed5";
+
+fetch(`https://api.indexnow.org/indexnow?url=${url}&key=${key}`);
+    </script>
+
 </body>
 </html>
