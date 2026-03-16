@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-sitemap: https://ayomidejohn-max.github.io/fadipe-funmilayo/sitemap.xml
+Sitemap:
+https://ayomidejohn-max.github.io/fadipe-funmilayo/sitemap.xml
 
